@@ -1,4 +1,4 @@
 NAME: scanobjectnn_img_pcl_h5_multiview
-DATA_PATH: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/scanobjectnn'
+DATA_PATH: '/home/amaya/repos/CrossMoST/data/scanobjectnn'
 NUM_CATEGORY: 15
 USE_NORMALS: FALSE

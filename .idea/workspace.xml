@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd3f7792-1f12-4883-b29e-070b0d999f71" name="Changes" comment="" />
+    <list default="true" id="dd3f7792-1f12-4883-b29e-070b0d999f71" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ModelNet40_img_pcl_h5_multiview.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/ModelNet40_img_pcl_h5_multiview.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ScanobjectNN_hardest_img_pcl_h5.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/ScanobjectNN_hardest_img_pcl_h5.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ScanobjectNN_hardest_img_pcl_h5_multiview.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/ScanobjectNN_hardest_img_pcl_h5_multiview.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ScanobjectNN_img_pcl_h5.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/ScanobjectNN_img_pcl_h5.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ScanobjectNN_img_pcl_h5_multiview.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/ScanobjectNN_img_pcl_h5_multiview.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ScanobjectNN_withbg_img_pcl_h5.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/ScanobjectNN_withbg_img_pcl_h5.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ScanobjectNN_withbg_img_pcl_h5_multiview.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/ScanobjectNN_withbg_img_pcl_h5_multiview.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ShapeNet-55.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/ShapeNet-55.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/co3d_img_pcl.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/co3d_img_pcl.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/redwood_img_pcl.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/redwood_img_pcl.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/amaya/repos/CrossMoST/checkpoints/co3d_crossmost",
+    "last_opened_file_path": "/home/amaya/repos/CrossMoST",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,7 +117,8 @@
       <workItem from="1706558183205" duration="614000" />
       <workItem from="1706655165335" duration="1224000" />
       <workItem from="1706656407226" duration="1961000" />
-      <workItem from="1707762600898" duration="8738000" />
+      <workItem from="1707762600898" duration="9280000" />
+      <workItem from="1707774237191" duration="2172000" />
     </task>
     <servers />
   </component>

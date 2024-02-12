@@ -1,19 +1,8 @@
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ulip-learning-unified-representation-of/3d-point-cloud-classification-on-modelnet40)](https://paperswithcode.com/sota/3d-point-cloud-classification-on-modelnet40?p=ulip-learning-unified-representation-of)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ulip-learning-unified-representation-of/3d-point-cloud-classification-on-scanobjectnn)](https://paperswithcode.com/sota/3d-point-cloud-classification-on-scanobjectnn?p=ulip-learning-unified-representation-of)
-
 # ULIP: Learning a Unified Representation of Language, Images, and Point Clouds for 3D Understanding
 
 [comment]: <> (---)
 
 Official implementation of [ULIP: Learning a Unified Representation of Language, Images, and Point Clouds for 3D Understanding](https://arxiv.org/abs/2212.05171)
-
-[Project Website](https://tycho-xue.github.io/ULIP/)
-
-# News
-ULIP has been accepted by CVPR 2023! 🔥🔥🔥
-
-# Animation
-![Pipeline Animation](assets/pipeline_8s_timing.gif)
 
 [comment]: <> (---)
 
@@ -34,15 +23,8 @@ We pre-train ULIP on 8 Nvidia A100 GPUs, the code is tested with CUDA==11.0 and 
 ```conda create -n ulip python=3.7.15``` \
 ```conda activate ulip``` \
 ```conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge``` \
-```pip install -r requirements.txt```\
-\
-[optional] \
-If you want to pre-train PointNeXt, we embed a modified PointNeXt codebase inside the ./models/pointnext, please do the following to install it:
-```
-cd ./models/pointnext/PointNeXt \
-bash update.sh \
-bash install.sh \
-```
+```pip install -r requirements.txt```
+
 ## [Download datasets and initialize models, put them in the right paths.]
 Download the used datasets and initialize models from [here](https://console.cloud.google.com/storage/browser/sfr-ulip-code-release-research). For now, you ONLY need to download "initialize_models", "modelnet40_normal_resampled", and "shapenet-55". You might need a gmail account to access it.\
 After you download the datasets and initialize models, you can choose one of the following options: \
@@ -113,18 +95,18 @@ Zero-shot classification on ModelNet40, 8k points pre-train, 8k points test, bes
 | [PointMLP](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointmlp.pt?authuser=0)            | 60.0 | 79.4 |
 | [PointBERT](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointbert.pt?authuser=0)          | 60.3 | 84.0 |
 | [PointNeXt](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointnext.pt?authuser=0)          | 56.2 | 77.0 |
-# TODO
-More supported backbones will be released soon.
 
 
 # Citation
 
-    @article{xue2022ulip,
-      title={ULIP: Learning Unified Representation of Language, Image and Point Cloud for 3D Understanding},
-      author={Xue, Le and Gao, Mingfei and Xing, Chen and Mart{\'\i}n-Mart{\'\i}n, Roberto and Wu, Jiajun and Xiong, Caiming and Xu, Ran and Niebles, Juan Carlos and Savarese, Silvio},
-      journal={arXiv preprint arXiv:2212.05171},
-      year={2022}
-    }
+[//]: # (    @article{xue2022ulip,)
 
-# Contact
-If you have any question about this project, please contact [lxue@salesforce.com](lxue@salesforce.com)
+[//]: # (      title={ULIP: Learning Unified Representation of Language, Image and Point Cloud for 3D Understanding},)
+
+[//]: # (      author={Xue, Le and Gao, Mingfei and Xing, Chen and Mart{\'\i}n-Mart{\'\i}n, Roberto and Wu, Jiajun and Xiong, Caiming and Xu, Ran and Niebles, Juan Carlos and Savarese, Silvio},)
+
+[//]: # (      journal={arXiv preprint arXiv:2212.05171},)
+
+[//]: # (      year={2022})
+
+[//]: # (    })
