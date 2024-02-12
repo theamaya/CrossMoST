@@ -1,0 +1,6 @@
+NAME: redwood_img_pcl
+DATA_PATH: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/redwood/data/meshpreprocessed3'
+IMAGE_PATH: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/redwood/data/videoframes'
+NUM_CATEGORY: 9
+USE_NORMALS: FALSE
+CATEGORIES: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/redwood/data/categories.json'

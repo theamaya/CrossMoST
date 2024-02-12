@@ -1,0 +1,5 @@
+NAME: ModelNet40_img_pcl
+DATA_PATH: '/home/amaya/repos/CLIP2Point/data/modelnet40_rendered/modelnet40v1png'
+IMAGE_PATH: '/home/amaya/repos/CLIP2Point/data/modelnet40_rendered/rendered_images'
+NUM_CATEGORY: 40
+USE_NORMALS: FALSE

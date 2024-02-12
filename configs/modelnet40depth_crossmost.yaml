@@ -1,0 +1,112 @@
+#optimizer_clip : {
+#  type: sgd,
+#  kwargs: {
+#  momentum: 0.9,
+#  base_lr : 0.002,
+#  bias_multiplier : 1,
+#  weight_decay : 0.0001
+#}}
+#
+#scheduler: {
+#  type: cosine,
+#  kwargs: {
+#    epochs: 100,
+#    initial_epochs : 0,
+#    min_lr : 0.000001
+#}}
+#
+#optimizer : {
+#  type: AdamW,
+#  kwargs: {
+#  lr : 0.00005,
+#  weight_decay : 0.05
+#}}
+
+# dataset : {
+#   shapenet : { _base_: data/ShapeNet-55.yaml,
+#             others: {subset: 'train','bs': 2}},
+#   mn40 : { _base_: data/ModelNet40_img_pcl.yaml,
+#             others: {subset: 'test','bs': 64}}}
+            
+model : {
+  NAME: Point_BERT,
+  m: 0.999,
+  T: 0.07,
+  K: 16384,
+  transformer_config: {
+    mask_ratio: [0.3, 0.4],
+    trans_dim: 384,
+    depth: 12,
+    drop_path_rate: 0.1,
+    cls_dim: 512,
+    replace_pob: 0.,
+    num_heads: 6,
+    moco_loss: False,
+    dvae_loss: False,
+    cutmix_loss: False,
+    return_all_tokens: False,
+  },
+  dvae_config : {
+    group_size: 32,
+    num_group: 64,
+    encoder_dims: 256,
+    num_tokens: 8192,
+    tokens_dims: 256, 
+    decoder_dims: 256, 
+    ckpt: './checkpoints/dVAE.pth'  # set the dVAE weight here
+  }
+}
+
+
+grad_norm_clip : 10
+
+input_size : 224
+mask_patch_size: 32
+model_patch_size: 16
+model_ema_decay_init: 0.99
+warm_it: 400
+
+mask_ratio: 0.3
+w_align_image: 0.2
+w_fair_image: 1
+w_mim_image: 1
+
+w_align_pc: 0.2
+w_fair_pc: 1
+w_mim_pc: 1
+
+conf_threshold_image: 0.8
+conf_threshold_pc: 0.82
+pc_loss_weight: 1
+
+combined_pseudolabels: True
+conf_threshold_combined: 0.84
+conf_weight_pc: 0.9
+pseudolabel_agreement_loss: False
+w_pseudo_agree: 0.1
+image_pc_align: True
+w_image_pc_align: 1
+
+agreement_pseudolabels: False
+agreement_pseudolabels_min_thresh: 0.2
+
+lr: 0.00002
+epochs: 200
+warmup_epochs : 1
+eval_freq: 1
+npoints: 8192
+batch_size : 128
+consider_metric: CDL1
+
+from_scratch: False
+ulip: False
+
+entropy_image: False
+entropy_pc: False
+
+only_pc: False
+only_image: False
+mask: True
+
+trans_pcl_img: False
+trans_img_pcl: False

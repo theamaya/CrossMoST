@@ -1,0 +1,4 @@
+NAME: ModelNet40_img_pcl_h5_multiview
+DATA_PATH: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/modelnet40_ply_hdf5_2048'
+NUM_CATEGORY: 40
+USE_NORMALS: FALSE

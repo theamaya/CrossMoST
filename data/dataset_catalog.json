@@ -1,0 +1,153 @@
+{
+    "shapenet": {
+        "config": "./data/ShapeNet-55.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40": {
+        "config": "./data/ModelNet40.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "test"
+    },
+    "modelnet10_img_pcl": {
+        "config": "./data/ModelNet10_img_pcl.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_img_pcl": {
+        "config": "./data/ModelNet40_img_pcl.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_img_pcl_1view": {
+        "config": "./data/ModelNet40_img_pcl_1view.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_img_pcl_2view": {
+        "config": "./data/ModelNet40_img_pcl_2view.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_img_pcl_4view": {
+        "config": "./data/ModelNet40_img_pcl_4view.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_img_pcl_8view": {
+        "config": "./data/ModelNet40_img_pcl_8view.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_medium_img_pcl": {
+        "config": "./data/ModelNet40_medium_img_pcl.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_hard_img_pcl": {
+        "config": "./data/ModelNet40_hard_img_pcl.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_img_pcl_multiview": {
+        "config": "./data/ModelNet40_img_pcl_multiview.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_img_pcl_h5": {
+        "config": "./data/ModelNet40_img_pcl_h5.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "modelnet40_img_pcl_h5_multiview": {
+        "config": "./data/ModelNet40_img_pcl_h5_multiview.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "scanobjectnn_img_pcl_h5": {
+        "config": "./data/ScanobjectNN_img_pcl_h5.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "scanobjectnn_img_pcl_h5_multiview": {
+        "config": "./data/ScanobjectNN_img_pcl_h5_multiview.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "scanobjectnn_withbg_img_pcl_h5": {
+        "config": "./data/ScanobjectNN_withbg_img_pcl_h5.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "scanobjectnn_withbg_img_pcl_h5_multiview": {
+        "config": "./data/ScanobjectNN_withbg_img_pcl_h5_multiview.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "scanobjectnn_hardest_img_pcl_h5": {
+        "config": "./data/ScanobjectNN_hardest_img_pcl_h5.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "scanobjectnn_hardest_img_pcl_h5_multiview": {
+        "config": "./data/ScanobjectNN_hardest_img_pcl_h5_multiview.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "redwood_img_pcl": {
+        "config": "./data/redwood_img_pcl.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "redwood_img_pcl_multiview": {
+        "config": "./data/redwood_img_pcl_multiview.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "pix3d_img_pcl": {
+        "config": "./data/pix3d_img_pcl.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "pix3d_img_pcl_multiview": {
+        "config": "./data/pix3d_img_pcl_multiview.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "co3d_img_pcl": {
+        "config": "./data/co3d_img_pcl.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    },
+    "co3d_img_pcl_multiview": {
+        "config": "./data/co3d_img_pcl_multiview.yaml",
+        "train": "train",
+        "test": "test",
+        "usage": "train"
+    }
+
+}

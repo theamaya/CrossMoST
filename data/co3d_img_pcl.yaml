@@ -1,0 +1,5 @@
+NAME: co3d_img_pcl
+DATA_PATH: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/co3d/data_preprocessed'
+IMAGE_PATH: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/co3d/data_preprocessed'
+NUM_CATEGORY: 42
+USE_NORMALS: FALSE

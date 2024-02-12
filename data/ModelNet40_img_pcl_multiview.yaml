@@ -1,0 +1,5 @@
+NAME: ModelNet40_img_pcl_multiview
+DATA_PATH: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/modelnet40_rendered/modelnet40v1png'
+IMAGE_PATH: '/nfs/users/ext_amaya.dharmasiri/repos/PointCLIP/data/modelnet40_rendered/rendered_images'
+NUM_CATEGORY: 40
+USE_NORMALS: FALSE
