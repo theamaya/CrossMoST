@@ -46,7 +46,6 @@ from utils.utils import NativeScalerWithGradNormCount as NativeScaler
 import warnings
 
 from utils.utils import get_dataset
-import models.ULIP_models as models
 import models.CrossMoST_models_scanobject as models
 from utils.tokenizer import SimpleTokenizer
 from utils import utils

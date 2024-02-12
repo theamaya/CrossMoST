@@ -1,33 +1,3 @@
-#optimizer_clip : {
-#  type: sgd,
-#  kwargs: {
-#  momentum: 0.9,
-#  base_lr : 0.002,
-#  bias_multiplier : 1,
-#  weight_decay : 0.0001
-#}}
-#
-#scheduler: {
-#  type: cosine,
-#  kwargs: {
-#    epochs: 100,
-#    initial_epochs : 0,
-#    min_lr : 0.000001
-#}}
-#
-#optimizer : {
-#  type: AdamW,
-#  kwargs: {
-#  lr : 0.00005,
-#  weight_decay : 0.05
-#}}
-
-# dataset : {
-#   shapenet : { _base_: data/ShapeNet-55.yaml,
-#             others: {subset: 'train','bs': 2}},
-#   mn40 : { _base_: data/ModelNet40_img_pcl.yaml,
-#             others: {subset: 'test','bs': 64}}}
-            
 model : {
   NAME: Point_BERT,
   m: 0.999,

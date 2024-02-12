@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CUDA_VISIBLE_DEVICES=0 #,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+CUDA_VISIBLE_DEVICES=0,1,2,3,4 #,5,6,7,8,9,10,11,12,13,14,15
 
 cd /home/amaya/repos/CrossMoST
 
@@ -11,7 +11,7 @@ export MKL_SERVICE_FORCE_INTEL=1
 
 time=`date +%m-%d_%H-%M-%S`
 
-/home/amaya/miniconda3/envs/ulip-local/bin/python \
+/home/amaya/miniconda3/envs/crossmost/bin/python \
     -m torch.distributed.launch --nproc_per_node=1 --master_port=12345 train_CrossMoST_modelnet40.py \
     --output_dir ./outputs/modelnet40_baseline/ \
     --config ./configs/modelnet40_baseline.yaml >outputs/modelnet40_baseline/$time.out

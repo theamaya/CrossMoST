@@ -1,27 +1,27 @@
-# ULIP: Learning a Unified Representation of Language, Images, and Point Clouds for 3D Understanding
+# CrossMoST: Cross-Modal Self-Training: Aligning Images and Pointclouds to learn Classification without Labels
 
 [comment]: <> (---)
 
-Official implementation of [ULIP: Learning a Unified Representation of Language, Images, and Point Clouds for 3D Understanding](https://arxiv.org/abs/2212.05171)
+Official implementation of [Cross-Modal Self-Training: Aligning Images and Point Clouds to learn Classification without Labels](https://arxiv.org/)
 
 [comment]: <> (---)
 
-# What is ULIP
-ULIP is a Model-agnostic Multimodal Pre-training Framework, which can leverage information from other modalities (Images, Language) to improve the ability to understand 3D data without introducing any extra latency.
-
+# What is CrossMoST
+It is an optimization framework to improve the label-free classification performance of a zero-shot 3D vision model by leveraging unlabeled 3D data and their accompanying 2D views. 
+We implement a student-teacher framework to simultaneously process 2D views and 3D point clouds and generate joint pseudo labels to train a classifier and guide cross-model feature alignment.
+                                                                                                                        
 [comment]: <> (---)
 
 # Pipeline
-![Overall Pipeline](assets/figure2_resize.gif)
+![Overall Pipeline](Assets/CrossMoST.pdf)
 
 [comment]: <> (---)
 
 # Instructions
-ULIP is a highly extensible multimodal pre-training framework, and it's model-architecture agnostic, meaning you can easily plug in any 3D backbone models and pre-train it using our framework to get a jump-start for various downstreaming tasks!
 ## [Install environments]
-We pre-train ULIP on 8 Nvidia A100 GPUs, the code is tested with CUDA==11.0 and pytorch==1.10.1\
-```conda create -n ulip python=3.7.15``` \
-```conda activate ulip``` \
+We trained our models on 4 Nvidia V100 GPUs, the code is tested with CUDA==11.0 and pytorch==1.10.1\
+```conda create -n crossmost python=3.7.15``` \
+```conda activate crossmost``` \
 ```conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge``` \
 ```pip install -r requirements.txt```
 
@@ -43,50 +43,30 @@ After you download the datasets and initialize models, you can choose one of the
 ```
 (2) Change the paths accordingly (optional to do if you don't want to put/link downloaded files in the data folder):
 ```
-# Change the "DATA_PATH", "PC_PATH", "IMAGE_PATH"
-./data/ShapeNet-55.yaml
-# Change the "DATA_PATH"
-./data/ModelNet40.yaml
-# Change the initialize_models address
-./models/ULIP_models.py
-Modify this line "pretrain_slip_model = torch.load('./data/initialize_models/slip_base_100ep.pt', map_location=torch.device('cpu'))"
+# Change the data paths in the config files
+./data/[dataset].yaml
 ```
 
+## [Zero-shot evaluation of Shapenet-pretrained backbones]
+ULIP pretraining??
 
-## [Pre-train 3D backbones]
-**Our framework is model architecture agonistic, currently four 3D backbones are supported:** \
-**Pointnet2(ssg)**\
-**PointBERT**\
-**PointMLP**\
-**PointNeXt**\
-\
-Please change the script to accommodate your system accordingly, this script is used to pre-train on 8 gpus by default. You can also modify the desired output folder in the script.
+Please change the script to accommodate your system accordingly, this script is used to train on 4 gpus by default. You can also modify the desired output folder in the script.
 ```
 # the scripts are named by its correspoinding 3D backbone name.
 bash ./scripts/(choose your pre-train script)
 ```
 
-## [Test pre-trained models for zero-shot classification on ModelNet40]
+## [Training CrossMoST]
 You may also change the output path in the scripts as well.
-
 ```
 bash ./scripts/(choose your test script) /path/to/your/checkpoint.pt
 ```
-You may also change the output path in the scripts as well.
+You can also run the baseline-self training
+```
+bash ./scripts/(choose your test script) /path/to/your/checkpoint.pt
+```
 
-## [Pre-train & Test using different number of points]
-Change the npoints argument in the scripts, by default its 8192. \
-**Note: Currently we use FPS to subsample the 8192 points, which might slow down the training speed. If you'd like, you can choose to cache or save the pre-processed datasets with different number of points to speed up your pre-training.**
-
-## [Pre-train your customized 3D backbones]
-There are only two things you need to change to pre-train your own customized 3D backbones: \
-(1) Define your own 3D backbone in ./models folder.\
-We put a template "customized_backbone" here, you can refer to the comments to see the expected input and output shapes. You can also refer to how pointnet2 is defined here. \
-(2) Use or modify this "ULIP_CUSTOMIZED" class in ./models/ULIP_models.py.\
-Please refer to the comments in "ULIP_CUSTOMIZED" class, it should be straightforward to follow, and please be sure to change the "pc_feat_dims" accordingly (since we are agnostic to the point cloud output feature dimensions of your customized 3D backbones).
-
-
-# Pre-trained models for zero-shot classification
+# Checkpoints for evaluating Baseline Self-training vs CrossMoST 
 Zero-shot classification on ModelNet40, 8k points pre-train, 8k points test, best checkpoint:
 
 | model                                                                                                                                                                   | top1 | top5 |
@@ -96,6 +76,17 @@ Zero-shot classification on ModelNet40, 8k points pre-train, 8k points test, bes
 | [PointBERT](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointbert.pt?authuser=0)          | 60.3 | 84.0 |
 | [PointNeXt](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointnext.pt?authuser=0)          | 56.2 | 77.0 |
 
+Evaluating CrossMoST using the given checkpoints
+```
+bash ./scripts/(choose your test script) /path/to/your/checkpoint.pt
+```
+You can also run the evaluations for baseline-self training
+```
+bash ./scripts/(choose your test script) /path/to/your/checkpoint.pt
+```
+
+# Our repository is based on 
+ULIP
 
 # Citation
 
@@ -110,3 +101,4 @@ Zero-shot classification on ModelNet40, 8k points pre-train, 8k points test, bes
 [//]: # (      year={2022})
 
 [//]: # (    })
+

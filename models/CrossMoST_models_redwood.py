@@ -694,7 +694,7 @@ def CrossMoST_PointBERT(args, classes, templates, tokenizer):
                 p.requires_grad = False
 
     if not args.from_scratch:
-        pretrained_ulip_model = torch.load('./outputs/3modal_ULIP_10june/checkpoint_best.pt',
+        pretrained_ulip_model = torch.load('./checkpoints/ulip-june11-checkpoint_best.pt',
                                            map_location=torch.device('cpu'))
         pretrained_ulip_model = pretrained_ulip_model['state_dict']
         temp = {}
