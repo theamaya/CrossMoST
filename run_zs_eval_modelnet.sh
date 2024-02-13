@@ -12,7 +12,7 @@ export MKL_SERVICE_FORCE_INTEL=1
 time=`date +%m-%d_%H-%M-%S`
 
 /home/amaya/miniconda3/envs/crossmost/bin/python \
-    -m torch.distributed.launch --nproc_per_node=1 --master_port=12345 train_CrossMoST_modelnet40.py \
+    -m torch.distributed.launch --nproc_per_node=4 --master_port=12345 train_CrossMoST_modelnet40.py \
     --output_dir ./outputs/modelnet40_crossmost/ \
     --config ./configs/modelnet40_crossmost.yaml \
     --eval >outputs/modelnet40_crossmost/$time.out

@@ -13,7 +13,7 @@ We implement a student-teacher framework to simultaneously process 2D views and 
 [comment]: <> (---)
 
 # Pipeline
-![Overall Pipeline](Assets/CrossMoST.pdf)
+![Overall Pipeline](Assets/CrossMoST.jpg)
 
 [comment]: <> (---)
 
@@ -26,67 +26,86 @@ We trained our models on 4 Nvidia V100 GPUs, the code is tested with CUDA==11.0 
 ```pip install -r requirements.txt```
 
 ## [Download datasets and initialize models, put them in the right paths.]
-Download the used datasets and initialize models from [here](https://console.cloud.google.com/storage/browser/sfr-ulip-code-release-research). For now, you ONLY need to download "initialize_models", "modelnet40_normal_resampled", and "shapenet-55". You might need a gmail account to access it.\
-After you download the datasets and initialize models, you can choose one of the following options: \
-(1) Put it in or do a soft link to the data folder, by default the data folder should have the following structure:
+Download the used datasets and initialize models from [here](https://console.cloud.google.com/storage/browser/sfr-ulip-code-release-research). 
+For now, you ONLY need to download "modelnet40_normal_resampled", and "shapenet-55".\
+The data folder should have the following structure:
 ```
 ./data |
--- ModelNet40.yaml |
--- ShapeNet-55.yaml |
--- dataset_3d.py |
--- dataset_catalog.json |
--- initialize_models |
--- labels.json |
--- modelnet40_normal_resampled |
--- shapenet-55 |
--- templates.json
+-- co3d |
+-- modelnet40_rendered |
+-- modelnet40_ply_hdf5_2048 |
+-- redwood |
+-- scanobjectnn |
+.
+.
+-- [dataset].yaml
+.
+.
+-- data_transforms.py 
+-- dataset_3d.py 
+-- dataset_catalog.json 
+-- labels.json 
+-- templates.json 
+-- utils.py
 ```
-(2) Change the paths accordingly (optional to do if you don't want to put/link downloaded files in the data folder):
+Once you have downloaded and unzipped the datasets, 
 ```
 # Change the data paths in the config files
 ./data/[dataset].yaml
 ```
+Then, download the [Shapenet-pretrained backbones](https://drive.google.com/file/d/1piD0tWWC9XXtggV1_47WEweDTgTxltx9/view?usp=sharing) and the [DVAE](https://drive.google.com/file/d/1Fh061dVtq6_vzjmgFH2qX72C9y47N1cA/view?usp=sharing) for the point-transformer.
+
+```
+./checkpoints |
+-- dVAE.pth 
+-- ulip-june11-checkpoint_best.pt 
+```
 
 ## [Zero-shot evaluation of Shapenet-pretrained backbones]
-ULIP pretraining??
-
 Please change the script to accommodate your system accordingly, this script is used to train on 4 gpus by default. You can also modify the desired output folder in the script.
 ```
 # the scripts are named by its correspoinding 3D backbone name.
-bash ./scripts/(choose your pre-train script)
+bash ./run_zs_eval_modelnet.sh
 ```
+adjust the bash script accordingly to run evaluations for other datasets. 
 
 ## [Training CrossMoST]
-You may also change the output path in the scripts as well.
 ```
-bash ./scripts/(choose your test script) /path/to/your/checkpoint.pt
+bash ./run_crossmost_train_modelnet.sh
 ```
 You can also run the baseline-self training
 ```
-bash ./scripts/(choose your test script) /path/to/your/checkpoint.pt
+bash ./run_baseline_train_modelnet.sh
 ```
+adjust the bash script accordingly to run evaluations for other datasets. 
 
-# Checkpoints for evaluating Baseline Self-training vs CrossMoST 
-Zero-shot classification on ModelNet40, 8k points pre-train, 8k points test, best checkpoint:
+## Checkpoints for evaluating Baseline Self-training vs CrossMoST 
+You can download the checkpoints of the CrossMoST from [here](https://drive.google.com/drive/folders/1qbWHFsjGDa6F_bcJEo7NNLl-W3MPUnFB?usp=sharing) and put them in the corresponding directories.
+```
+./checkpoints |
+-- dVAE.pth 
+-- ulip-june11-checkpoint_best.pt 
+-- co3d_baseline |
+    -- checkpoint-best.pth |
+.
+.
+.
+-- scobjwbg_crossmost |
+    -- checkpoint-best.pth
+```
+To run the evaluation on the provided checkpoints,
+```
+bash ./run_crossmost_eval_modelnet.sh
+```
+You can also run the baseline-self training
+```
+bash ./run_baseline_eval_modelnet.sh
+```
+adjust the bash script accordingly to run evaluations for other datasets. 
 
-| model                                                                                                                                                                   | top1 | top5 |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|------|
-| [Pointnet2(ssg)](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointnet2_ssg.pt?authuser=0) | 57.7 | 78.9 |
-| [PointMLP](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointmlp.pt?authuser=0)            | 60.0 | 79.4 |
-| [PointBERT](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointbert.pt?authuser=0)          | 60.3 | 84.0 |
-| [PointNeXt](https://storage.cloud.google.com/sfr-ulip-code-release-research/pretrained_models/ckpt_zero-sho_classification/checkpoint_pointnext.pt?authuser=0)          | 56.2 | 77.0 |
-
-Evaluating CrossMoST using the given checkpoints
-```
-bash ./scripts/(choose your test script) /path/to/your/checkpoint.pt
-```
-You can also run the evaluations for baseline-self training
-```
-bash ./scripts/(choose your test script) /path/to/your/checkpoint.pt
-```
-
-# Our repository is based on 
-ULIP
+# Acknowledgemets
+Our code borrows heavily from [MUST](https://github.com/salesforce/MUST) repository. 
+If you use our model, please consider citing them as well.
 
 # Citation
 
