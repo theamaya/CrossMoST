@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd3f7792-1f12-4883-b29e-070b0d999f71" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_baseline_eval_modelnet.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_baseline_eval_modelnet.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_baseline_train_modelnet.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_baseline_train_modelnet.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_crossmost_eval_modelnet.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_crossmost_eval_modelnet.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_crossmost_train_modelnet.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_crossmost_train_modelnet.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_zs_eval_modelnet.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_zs_eval_modelnet.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +107,7 @@
       <workItem from="1706655165335" duration="1224000" />
       <workItem from="1706656407226" duration="1961000" />
       <workItem from="1707762600898" duration="9280000" />
-      <workItem from="1707774237191" duration="9718000" />
+      <workItem from="1707774237191" duration="10070000" />
     </task>
     <servers />
   </component>

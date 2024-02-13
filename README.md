@@ -80,7 +80,7 @@ bash ./run_baseline_train_modelnet.sh
 adjust the bash script accordingly to run evaluations for other datasets. 
 
 ## Checkpoints for evaluating Baseline Self-training vs CrossMoST 
-You can download the checkpoints of the CrossMoST from [here](https://drive.google.com/drive/folders/1qbWHFsjGDa6F_bcJEo7NNLl-W3MPUnFB?usp=sharing) and put them in the corresponding directories.
+You can download the checkpoints of the CrossMoST and our baselines from [here](https://drive.google.com/drive/folders/1qbWHFsjGDa6F_bcJEo7NNLl-W3MPUnFB?usp=sharing) and put them in the corresponding directories.
 ```
 ./checkpoints |
 -- dVAE.pth 
