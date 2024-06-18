@@ -1,4 +1,4 @@
-# CrossMoST: Cross-Modal Self-Training: Aligning Images and Pointclouds to learn Classification without Labels [CVPR'24 Workshop for Learning 3D with Multi-View Supervision]
+# CrossMoST: Cross-Modal Self-Training: Aligning Images and Pointclouds to learn Classification without Labels [3DMV (CVPR workshop), 2024]
 
 [comment]: <> (---)
 
