@@ -108,7 +108,7 @@ Our code borrows heavily from [MUST](https://github.com/salesforce/MUST) reposit
 If you use our model, please consider citing them as well.
 
 # Citation
-'''
+```
 @InProceedings{Dharmasiri_2024_CVPR,
     author    = {Dharmasiri, Amaya and Naseer, Muzammal and Khan, Salman and Khan, Fahad Shahbaz},
     title     = {Cross-Modal Self-Training: Aligning Images and Pointclouds to learn Classification without Labels},
@@ -116,7 +116,7 @@ If you use our model, please consider citing them as well.
     month     = {June},
     year      = {2024},
     pages     = {708-717}
-'''
+```
 [//]: # (    @article{xue2022ulip,)
 
 [//]: # (      title={ULIP: Learning Unified Representation of Language, Image and Point Cloud for 3D Understanding},)
